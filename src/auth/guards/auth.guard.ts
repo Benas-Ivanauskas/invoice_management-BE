@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate {
         console.error('Access token has expired:', err);
       }
     }
-
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const refreshToken = req.cookies?.refresh_token;
     if (!refreshToken) throw new UnauthorizedException('No valid tokens');
 
